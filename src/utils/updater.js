@@ -73,6 +73,6 @@ ${changelog.length > 0 ? changelog.join("\n") : "No changelog available."}
   } catch (error) {
     console.error("Failed to check for updates:", error);
   } finally {
-    checkingForUpdate = false;
+    checkingForUpdate = true;
   }
 };
