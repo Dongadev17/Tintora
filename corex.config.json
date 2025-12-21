@@ -1,11 +1,11 @@
 {
   "app": {
     "name": "Tintora",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "version_code": 1,
     "verbose": false,
     "package_name": "com.hmi.tintora",
-    "backgroundColor": "#121212",
+    "backgroundColor": "#111111",
     "icon": "./src/icons/logo.png",
     "splashScreen": "",
     "blurApp": false,
@@ -38,7 +38,8 @@
       ],
       "sensitive": [
         "https://oyyi.xyz/api/image/color-palette",
-        "ColorExtractorDB"
+        "ColorExtractorDB",
+        "https://raw.githubusercontent.com/ishak9988/Tintora/main/version.json"
       ]
     },
     "html_css": true

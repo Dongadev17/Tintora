@@ -1,7 +1,7 @@
 const SinglePalettePage = (params, el) => {
   const NoPaletteSelected = html`
     <section
-      class="flex flex-col items-center justify-center text-center bg-[#121212] h-[60vh] p-8 rounded-3xl border border-[#2A2A2A]"
+      class="flex flex-col items-center justify-center text-center bg-[#121212] h-[60vh] p-8 mt-10 rounded-3xl border border-[#2A2A2A]"
     >
       <span class="solar--pallete-2-bold-duotone mb-4"></span>
       <h1 class="text-2xl font-semibold text-white mb-2">
@@ -42,7 +42,7 @@ const SinglePalettePage = (params, el) => {
       id="deleteBtn"
       class="ripple-container text-red-400 flex size-12 h-full rounded-3xl items-center justify-center"
     >
-      <span class="solar--trash-bin-trash-bold-duotone drop-shadow-md"></span>
+      <span class="solar--trash-bin-trash-bold-duotone"></span>
     </button>
   `;
 
@@ -198,8 +198,12 @@ const SinglePalettePage = (params, el) => {
     }
   });
 
+  const truncate = (str, max = 20) =>
+    str && str.length > max ? str.slice(0, max) + "…" : str;
+
   return Layout(Content, {
-    title: currentImg.name || "Palette",
+    title: truncate(currentImg?.name, 7) || "Palette",
+    backBtnRoute: "palettes",
     showRightSection: rightSec,
   });
 };

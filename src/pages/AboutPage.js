@@ -119,15 +119,6 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-
-        <!-- Footer -->
-        <div class="text-center pt-6 border-t border-[#4d4d4d]">
-          <p class="text-slate-500 text-sm">
-            © 2025 Tintora by ${" "}<span class="text-gray-400 font-medium"
-              >HMI</span
-            >. All rights reserved.
-          </p>
-        </div>
       </div>
     </section>
   `;

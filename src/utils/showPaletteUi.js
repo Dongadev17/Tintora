@@ -14,12 +14,10 @@ const showPalette = (paletteData, container) => {
       title="${c.color}"
     >
       <div
-        class="p-2 flex flex-col items-center justify-between h-full rounded-2xl bg-black/10 backdrop-blur-[1px]"
+        class="p-2 flex flex-col items-center justify-between h-full rounded-2xl bg-black/10 "
       >
-        <span class="text-base font-semibold drop-shadow-sm"> ${c.color} </span>
-        <span class="text-sm opacity-65 font-medium drop-shadow-sm">
-          ${percentage}
-        </span>
+        <span class="text-base font-semibold"> ${c.color} </span>
+        <span class="text-sm opacity-65 font-medium"> ${percentage} </span>
         <span class="text-xs opacity-50 font-mono mt-1"> ${rgbText} </span>
       </div>
     </div>

@@ -2,12 +2,16 @@ const HomePage = (params, el) => {
   const rightSec = html`
     <button
       data-route="about"
+      aria-label="About Tintora"
+      title="About Tintora"
       class="ripple-container flex w-13 h-12 h-full rounded-3xl items-center justify-center"
     >
       <span class="solar--settings-bold-duotone"></span>
     </button>
     <button
       data-route="feedback"
+      aria-label="Send feedback"
+      title="Send feedback"
       class="ripple-container flex w-13 h-12 h-full rounded-3xl items-center justify-center"
     >
       <span class="solar--chat-square-code-bold-duotone"></span>
@@ -15,10 +19,10 @@ const HomePage = (params, el) => {
   `;
   const Content = html`
     <section
-      class="flex items-center justify-center min-h-[60vh] bg-[#121212] px-1 pt-5 pb-20"
+      class="flex items-center justify-center min-h-[60vh] bg-[#111] px-1 mt-5 pt-6 pb-20"
     >
       <div
-        class="w-full max-w-md bg-[#1C1C1C] border-t border-t-[#3e3e3e] border-b border-b-[#2e2e2e] rounded-3xl shadow-lg p-6 text-center "
+        class="w-full max-w-md bg-[#161616] border-t border-t-[#2e2e2e] border-b border-b-[#1e1e1e] rounded-3xl shadow-lg p-6 text-center "
       >
         <!-- Upload Icon -->
         <div
@@ -38,10 +42,10 @@ const HomePage = (params, el) => {
         </p>
 
         <!-- Upload button -->
-        <div id="uploadSection" class="space-y-4">
+        <div id="uploadSection" class="mt-10 space-y-4">
           <button
             id="scanUploadBtn"
-            class="ripple-container w-full py-4 rounded-full font-medium bg-sky-700 hover:bg-sky-600 text-sky-100 focus:ring-2 focus:ring-sky-400 focus:outline-none  duration-200 shadow-md"
+            class="disabled:opacity-60 ripple-container w-full py-4 rounded-full font-medium bg-blue-500 text-white shadow-md"
           >
             Choose Image
           </button>
@@ -224,7 +228,7 @@ const HomePage = (params, el) => {
         uploadSection.remove();
         await AnimUtils.zoomIn(display);
         const scannerContainer = display.querySelector("#scannerDots");
-        const stopScanner = startDotScanner(scannerContainer);
+
         await loadingSheet.show().then((sh) => {
           const p = sh.querySelector("h1");
           AnimUtils.addTextShimmer(p, {
@@ -245,7 +249,6 @@ const HomePage = (params, el) => {
         currentImg = paletteData;
         loadingSheet.setDisable(false);
         await sheet.dismiss();
-        stopScanner();
         clearShimmer();
         setTimeout(() => r.navigateTo("single-palette"), 200);
       } catch (err) {
@@ -317,7 +320,7 @@ const HomePage = (params, el) => {
         await AnimUtils.zoomIn(display);
 
         const scannerContainer = display.querySelector("#scannerDots");
-        const stopScanner = startDotScanner(scannerContainer);
+
         await loadingSheet.show().then((sh) => {
           const p = sh.querySelector("h1");
           AnimUtils.addTextShimmer(p, {
@@ -340,7 +343,6 @@ const HomePage = (params, el) => {
           currentImg = paletteData;
           loadingSheet.setDisable(false);
           await sheet.dismiss();
-          stopScanner();
           clearShimmer();
 
           setTimeout(() => r.navigateTo("single-palette"), 200);
@@ -348,7 +350,6 @@ const HomePage = (params, el) => {
           console.error("Color extraction error:", err);
           resetUI("Failed to extract palette. Please try again.");
 
-          stopScanner();
           clearShimmer();
         }
       };

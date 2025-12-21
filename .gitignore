@@ -6,6 +6,7 @@ target/
 bin/
 obj/
 .android/
+.corex/
 
 # Generated files
 *.exe
@@ -17,3 +18,5 @@ obj/
 
 # Logs
 *.log
+corex.config.json
+push.bat
