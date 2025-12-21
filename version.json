@@ -1,1 +1,10 @@
-[{ "version": "1.5.0", "changelog": "First update test" }]
+[
+  {
+    "version": "1.6.0",
+    "changelog": [
+      "- Added new features for palette organization.",
+      "- Improved performance when loading large palettes.",
+      "- Fixed bugs related to palette sharing."
+    ]
+  }
+]
