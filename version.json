@@ -1,6 +1,6 @@
 [
   {
-    "version": "1.6.0",
+    "version": "1.7.0",
     "changelog": [
       "- Added new features for palette organization.",
       "- Improved performance when loading large palettes.",
