@@ -2,11 +2,15 @@ const CURRENT_VERSION = Android.getAppVersion() || "1.0.0";
 const VERSION_URL =
   "https://raw.githubusercontent.com/ishak9988/Tintora/main/version.json";
 
+<<<<<<< HEAD
 let checkingForUpdate = false;
 
 if (!checkingForUpdate) {
   Android.nativeCall("GET", VERSION_URL, null, null, "onUpdateCheckResult");
 }
+=======
+Android.nativeCall("GET", VERSION_URL, null, null, "onUpdateCheckResult");
+>>>>>>> b5bea5c70510692397a0564aacd7c1b5d7b19a00
 
 const onUpdateCheckResult = (response) => {
   try {
