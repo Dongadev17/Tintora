@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "Tintora",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "version_code": 1,
     "verbose": false,
     "package_name": "com.hmi.tintora",
