@@ -1,0 +1,10 @@
+* {
+  font-family: "Zalando Sans SemiExpanded", sans-serif;
+  outline: none !important;
+  user-select: none;
+}
+
+nav [data-route-active="true"] {
+  color: #79b8f7 !important;
+  background-color: #174e858b; 
+}

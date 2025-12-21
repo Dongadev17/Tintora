@@ -1,0 +1,19 @@
+# Build outputs
+build/
+dist/
+out/
+target/
+bin/
+obj/
+.android/
+
+# Generated files
+*.exe
+*.dll
+*.so
+*.o
+*.class
+*.apk
+
+# Logs
+*.log
