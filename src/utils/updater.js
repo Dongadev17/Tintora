@@ -1,5 +1,5 @@
 const CURRENT_VERSION = Android.getAppVersion() || "1.0.0";
-const MAIN_REPO = "ishak9988/Tintora";
+const MAIN_REPO = "Dongadev17/Tintora";
 const VERSION_URL = `https://raw.githubusercontent.com/${MAIN_REPO}/main/version.json`;
 
 let checkingForUpdate = false;
