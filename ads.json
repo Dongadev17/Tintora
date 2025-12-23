@@ -5,6 +5,21 @@
       "title": "AI Color Extractor",
       "description": "Extract beautiful color palettes from any image instantly.",
       "href": "https://example.com/ai-color-extractor"
+<<<<<<< HEAD
+=======
+    },
+    {
+      "id": "ad-002",
+      "title": "Fast Website Monitor",
+      "description": "Track uptime, user locations, and device analytics in real time.",
+      "href": "https://example.com/website-monitor"
+    },
+    {
+      "id": "ad-003",
+      "title": "Tailwind Palette Generator",
+      "description": "Generate Tailwind-ready color configs from your brand colors.",
+      "href": "https://example.com/tailwind-palette"
+>>>>>>> b9272dcca5dff02903988f646a2b5ccefd2ef8f0
     }
   ]
 }
