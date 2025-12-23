@@ -21,3 +21,4 @@ obj/
 corex.config.json
 push.bat
 src/utils/env.js
+events.js

@@ -2,9 +2,10 @@
   "ads": [
     {
       "id": "ad-001",
-      "title": "AI Color Extractor",
-      "description": "Extract beautiful color palettes from any image instantly.",
-      "href": "https://example.com/ai-color-extractor"
+      "title": "Never Lose a File Again",
+      "imageUrl": "https://www.imghost.online/ib/6re96aauMTq0LJ5_1766515049.png",
+      "description": "Back up your photos, documents, and projects instantly with Dropbox.",
+      "href": "https://www.dropbox.com/referrals/AAAgHDbvKJZScfeVUV7lIRoPSl-K1heTWrM?src=global9"
     }
   ]
 }
