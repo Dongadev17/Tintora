@@ -1,0 +1,10 @@
+{
+  "ads": [
+    {
+      "id": "ad-001",
+      "title": "AI Color Extractor",
+      "description": "Extract beautiful color palettes from any image instantly.",
+      "href": "https://example.com/ai-color-extractor"
+    }
+  ]
+}

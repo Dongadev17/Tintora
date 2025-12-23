@@ -1,4 +1,4 @@
-const SinglePalettePage = (params, el) => {
+const SinglePalettePage = async (params, el) => {
   const NoPaletteSelected = html`
     <section
       class="flex flex-col items-center justify-center text-center bg-[#121212] h-[60vh] p-8 mt-10 rounded-3xl border border-[#2A2A2A]"
@@ -13,6 +13,9 @@ const SinglePalettePage = (params, el) => {
     </section>
   `;
 
+  await PaletteDB.getAll().then((p) => {
+    currentImg = p[0];
+  });
   if (!currentImg) {
     return Layout(NoPaletteSelected, { title: "Palette" });
   }
@@ -103,7 +106,7 @@ const SinglePalettePage = (params, el) => {
         const bs = new BottomSheet({
           content: html`
             <div class="pb-6 text-center">
-              <h1 class="text-xl font-bold mb-1.5 text-white">Share Palette</h1>
+              <h1 class="text-2xl font-bold text-white">Share Palette</h1>
               <p class="text-gray-400 mb-6">
                 Here’s your extracted color palette
               </p>
@@ -189,20 +192,23 @@ const SinglePalettePage = (params, el) => {
       showPalette(currentImg, el.querySelector("#color-palette"));
     }
     if (deleteBtn) {
-      deleteBtn.addEventListener("click", () => {
-        localStorage.removeItem("imagePalette_" + currentImg.id);
-        setTimeout(() => {
-          r.navigateTo("home");
-        }, 100);
+      deleteBtn.addEventListener("click", async () => {
+        await PaletteDB.delete(currentImg.id).then(async () => {
+          const palettesLeft = await PaletteDB.getAll();
+          setTimeout(() => {
+            if (palettesLeft.length) {
+              r.navigateTo("palettes");
+            } else {
+              r.navigateTo("home");
+            }
+          }, 100);
+        });
       });
     }
   });
 
-  const truncate = (str, max = 20) =>
-    str && str.length > max ? str.slice(0, max) + "…" : str;
-
   return Layout(Content, {
-    title: truncate(currentImg?.name, 7) || "Palette",
+    title: truncate(currentImg?.name, 5) || "Palette",
     backBtnRoute: "palettes",
     showRightSection: rightSec,
   });

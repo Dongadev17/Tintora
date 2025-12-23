@@ -37,7 +37,7 @@ const PalettesPage = (params, el) => {
     palettes.forEach((palette) => {
       const card = document.createElement("div");
       card.className =
-        "relative no-shake ripple-container group overflow-hidden rounded-3xl border border-[#2A2A2A] shadow-md bg-[#1E1E1E]";
+        "relative no-shake ripple-container group overflow-hidden rounded-3xl shadow-xl bg-[#1E1E1E]";
       card.id = `palette_${palette.id}`;
 
       card.innerHTML = html`
@@ -47,10 +47,12 @@ const PalettesPage = (params, el) => {
           class="w-full rounded-2xl h-26 object-cover"
         />
         <div
-          class="absolute inset-x-1.5 bottom-0.5 flex items-center justify-between"
+          class="absolute inset-x-1 text-sm bottom-1 flex items-center justify-between"
         >
-          <p class="text-gray-200 truncate bg-black/40 py-1 px-3 rounded-3xl  ">
-            ${palette.name || "Palette"}
+          <p
+            class="text-gray-200 truncate bg-[#181818]/80 py-1 px-3 rounded-2xl "
+          >
+            ${truncate(palette.name, 34) || "Palette"}
           </p>
         </div>
       `;

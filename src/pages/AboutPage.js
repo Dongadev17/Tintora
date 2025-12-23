@@ -18,7 +18,7 @@ const AboutPage = () => {
         <!-- Legal Content Cards -->
         <div class="space-y-4 mb-8">
           <!-- Copyright Card -->
-          <div class="bg-[#181818] border border-[#2d2d2d] rounded-2xl p-6">
+          <div class="bg-[#181818] border border-[#2d2d2d] rounded-3xl p-6">
             <div class="flex items-start gap-4">
               <div
                 class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center"
@@ -52,7 +52,7 @@ const AboutPage = () => {
           </div>
 
           <!-- License Card -->
-          <div class="bg-[#181818]  border border-[#2d2d2d] rounded-2xl p-6">
+          <div class="bg-[#181818]  border border-[#2d2d2d] rounded-3xl p-6">
             <div class="flex items-start gap-4">
               <div
                 class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center"
@@ -86,7 +86,7 @@ const AboutPage = () => {
           </div>
 
           <!-- Disclaimer Card -->
-          <div class="bg-[#181818]  border border-[#2d2d2d] rounded-2xl p-6">
+          <div class="bg-[#181818] border border-[#2d2d2d] rounded-3xl p-6">
             <div class="flex items-start gap-4">
               <div
                 class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center"

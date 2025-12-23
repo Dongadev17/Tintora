@@ -49,6 +49,8 @@ r.add("home", HomePage, { cache: false })
 
     // Optional: periodic check in case events are missed
     setInterval(updateConnectionStatus, 5000); // every 5 seconds
+
+    warmUpApiIdle([OYYI_ENDPOINT, THECOLORAPI_ENDPOINT, GITHUB_RAW_BASE]);
   });
 
 r.addHook("beforeRender", ({ routeName, params }) => {

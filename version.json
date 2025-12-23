@@ -2,9 +2,9 @@
   {
     "version": "1.7.0",
     "changelog": [
+      "- New christmas icon added.",
       "- Added new features for palette organization.",
-      "- Improved performance when loading large palettes.",
-      "- Fixed bugs related to palette sharing."
+      "- Improved performance when loading large palettes."
     ]
   }
 ]

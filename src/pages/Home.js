@@ -94,6 +94,8 @@ const HomePage = (params, el) => {
               <input
                 id="paletteNameInput"
                 type="text"
+                minlength="3"
+                maxlength="30"
                 placeholder="Enter palette name"
                 class="w-full p-4 rounded-xl bg-[#2e2e2e] mb-5"
                 autocomplete="off"
@@ -227,7 +229,6 @@ const HomePage = (params, el) => {
         await AnimUtils.zoomOut(uploadSection, { keepState: true });
         uploadSection.remove();
         await AnimUtils.zoomIn(display);
-        const scannerContainer = display.querySelector("#scannerDots");
 
         await loadingSheet.show().then((sh) => {
           const p = sh.querySelector("h1");
@@ -240,10 +241,14 @@ const HomePage = (params, el) => {
         sheet = loadingSheet;
 
         // API call
-        const paletteData = await getColorPaletteFromBase64(imageSrc);
+        let paletteData = await getColorPaletteFromBase64(imageSrc);
         paletteData.imgSrc = imageSrc;
         paletteData.id = utils().id();
         paletteData.name = paletteName;
+
+        // 🔥 Enrich ONCE (colors + schemes + exports)
+        paletteData = await enrichPaletteData(paletteData);
+
         await PaletteDB.save(paletteData.id, paletteData);
 
         currentImg = paletteData;
@@ -318,8 +323,6 @@ const HomePage = (params, el) => {
         await AnimUtils.zoomOut(uploadSection, { keepState: true });
         uploadSection.remove();
         await AnimUtils.zoomIn(display);
-
-        const scannerContainer = display.querySelector("#scannerDots");
 
         await loadingSheet.show().then((sh) => {
           const p = sh.querySelector("h1");

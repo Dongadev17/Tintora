@@ -21,7 +21,7 @@ const Header = (
   const rightSection = showRightSection
     ? html`
         <div
-          class="flex items-center justify-end h-12 rounded-3xl bg-[#2A2A2A]/60   border-t border-t-[#3e3e3e] border-b border-b-[#2e2e2e] shadow-sm"
+          class="flex items-center justify-end h-12 rounded-3xl bg-[#2A2A2A]/60 border-t border-t-[#3e3e3e] border-b border-b-[#2e2e2e] backdrop-blur-sm shadow-lg"
         >
           ${showRightSection}
         </div>
@@ -34,7 +34,7 @@ const Header = (
     >
       <!-- Title Section -->
       <div
-        class="  rounded-full flex items-center justify-start gap-3 pr-4 h-12"
+        class="backdrop-blur-sm shadow-lg rounded-full flex items-center justify-start gap-3 pr-4 h-12"
       >
         <!-- Back Button -->
         ${backBtn}

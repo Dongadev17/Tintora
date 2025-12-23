@@ -1,6 +1,4 @@
 const getColorPaletteFromBase64 = async (base64Image) => {
-  const apiUrl = "https://oyyi.xyz/api/image/color-palette";
-
   // ---- 1. Convert Base64 → Image element ----
   const img = await new Promise((resolve, reject) => {
     const image = new Image();
@@ -41,7 +39,7 @@ const getColorPaletteFromBase64 = async (base64Image) => {
   const formData = new FormData();
   formData.append("file", compressedBlob, "image.jpg");
 
-  const res = await fetch(apiUrl, { method: "POST", body: formData });
+  const res = await fetch(OYYI_ENDPOINT, { method: "POST", body: formData });
   if (!res.ok) throw new Error(`HTTP error ${res.status}`);
 
   return await res.json();
